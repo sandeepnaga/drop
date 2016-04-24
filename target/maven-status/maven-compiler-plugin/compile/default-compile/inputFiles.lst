@@ -1,5 +1,8 @@
 /Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/resources/HelloWorldResource.java
+/Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/dao/HelloWorldDao.java
+/Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/config/HelloWorldModule.java
 /Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/health/TemplateHealthCheck.java
 /Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/api/Saying.java
+/Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/service/HelloWorldService.java
 /Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/HelloWorldConfiguration.java
 /Users/sandeep.naga/prod_workspace/dropwiz/src/main/java/com/example/helloworld/HelloWorldApplication.java
