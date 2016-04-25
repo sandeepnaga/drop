@@ -93,3 +93,6 @@ logging:
 #metrics:
  # type: graphite
   #frequency: 10s
+helloWorldDupDao:
+  var1: sandeep
+  var2: veeru

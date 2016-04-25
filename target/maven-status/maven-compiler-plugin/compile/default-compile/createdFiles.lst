@@ -4,5 +4,6 @@ com/example/helloworld/HelloWorldApplication.class
 com/example/helloworld/resources/HelloWorldResource.class
 com/example/helloworld/health/TemplateHealthCheck.class
 com/example/helloworld/HelloWorldConfiguration.class
+com/example/helloworld/dao/HelloWorldDupDao.class
 com/example/helloworld/config/HelloWorldModule.class
 com/example/helloworld/dao/HelloWorldDao.class
