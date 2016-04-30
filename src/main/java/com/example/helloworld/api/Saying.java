@@ -18,12 +18,12 @@ public class Saying {
         this.content = content;
     }
 
-    @JsonProperty
+    //@JsonProperty
     public long getId() {
         return id;
     }
 
-    @JsonProperty
+    //@JsonProperty
     public String getContent() {
         return content;
     }
