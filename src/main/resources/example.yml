@@ -25,6 +25,9 @@ defaultName: ${DW_DEFAULT_NAME:-Stranger}
 #    port: 8080
 
 server:
+  #type: simple
+  #applicationContextPath: /application
+  #rootPath: /api/
 #  softNofileLimit: 1000
 #  hardNofileLimit: 1000
   applicationConnectors:
@@ -63,7 +66,7 @@ logging:
   loggers:
 
     # Sets the level for 'com.example.app' to DEBUG.
-    com.example.app: DEBUG
+    com.example.helloworld: DEBUG
 
     # Redirects SQL logs to a separate file
     org.hibernate.SQL:

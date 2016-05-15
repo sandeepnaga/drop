@@ -14,8 +14,13 @@ import javax.ws.rs.core.MediaType;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import jdk.nashorn.internal.runtime.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
+
+
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
+@Slf4j
 public class HelloWorldResource {
     private final String template;
     private final String defaultName;
@@ -46,7 +51,9 @@ public class HelloWorldResource {
     @Timed
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
         final String value = String.format(template, name.or(defaultName));
-        
+        log.error("something is wrong");
+        log.error("buidl success");
+
         helloWorldService.callPrintFunction();
         return new Saying(counter.incrementAndGet(), value);
     }

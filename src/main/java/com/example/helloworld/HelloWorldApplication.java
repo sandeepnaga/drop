@@ -1,12 +1,15 @@
 package com.example.helloworld;
 
+import com.example.helloworld.resources.NotificationsResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import com.example.helloworld.command.MyCommand;
 import com.example.helloworld.config.HelloWorldModule;
 import com.example.helloworld.health.TemplateHealthCheck;
 import com.example.helloworld.resources.HelloWorldResource;
+import com.example.helloworld.tasks.TestingTask;
 import com.example.helloworld.HelloWorldConfiguration;
 import com.google.inject.Guice;
 import com.hubspot.dropwizard.guice.GuiceBundle;
@@ -32,6 +35,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     	 GuiceBundle.Builder<HelloWorldConfiguration> guiceBundleBuilder = GuiceBundle.newBuilder();
  	    guiceBundle = guiceBundleBuilder.addModule(new HelloWorldModule()).build();
  	   bootstrap.addBundle(guiceBundle);
+ 	  bootstrap.addCommand(new MyCommand());
  	        
      // nothing to do yet
     }
@@ -44,13 +48,15 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     	        configuration.getTemplate(),
     	        configuration.getDefaultName()
     	    );
+        final NotificationsResource notificationsResource = new NotificationsResource();
+        environment.jersey().register(notificationsResource);
     	    environment.jersey().register(resource);
     	    
     	    final TemplateHealthCheck healthCheck =
     	            new TemplateHealthCheck(configuration.getTemplate());
     	        environment.healthChecks().register("template", healthCheck);
     	        environment.jersey().register(resource);
-    	        
+    	        environment.admin().addTask( new TestingTask("abcd"));
     	        System.out.println("in application run**************");
     	   
     }
