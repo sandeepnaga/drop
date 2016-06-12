@@ -24,6 +24,7 @@ public class HelloWorldModule extends AbstractModule{
 	@Singleton
 	HelloWorldDupDao getDupDao(Provider<HelloWorldConfiguration> configuration){
 		System.out.println("inside abstract dao dup");
+
 		return new HelloWorldDupDao("sa","bbd");
 	}
 }
