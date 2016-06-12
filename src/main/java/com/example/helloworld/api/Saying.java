@@ -1,22 +1,28 @@
 package com.example.helloworld.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import io.dropwizard.jackson.JsonSnakeCase;
 import org.hibernate.validator.constraints.Length;
 
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.StreamingOutput;
+import java.io.IOException;
+import java.io.OutputStream;
 
-public class Saying {
+
+@JsonSnakeCase
+public class Saying  {
     private long id;
 
     @Length(max = 3)
-    private String content;
+    private String contentValue;
 
     public Saying() {
         // Jackson deserialization
     }
 
-    public Saying(long id, String content) {
+    public Saying(long id, String contentValue) {
         this.id = id;
-        this.content = content;
+        this.contentValue = contentValue;
     }
 
     //@JsonProperty
@@ -25,7 +31,10 @@ public class Saying {
     }
 
     //@JsonProperty
-    public String getContent() {
-        return content;
+    public String getContentValue() {
+        return contentValue;
     }
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import com.example.helloworld.filters.DateRequiredFeature;
 import com.example.helloworld.resources.NotificationsResource;
 import com.google.inject.Stage;
 import io.dropwizard.Application;
@@ -78,6 +79,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     	        //environment.jersey().register(resource);
     	        environment.admin().addTask( new TestingTask("abcd"));
     	        System.out.println("in application run**************");
+        environment.jersey().register(DateRequiredFeature.class);
     	   
     }
 

@@ -29,7 +29,7 @@ public class NotificationsResource {
     @POST
     @Metered
 
-    public Response add(@PathParam("user") LongParam userId,Notification paramNotification){
+    public Response add(@PathParam("user") LongParam userId,@Valid Notification paramNotification){
       log.info("user value is"+userId);
       notification = new Notification();
       //notification.setId(userId.get());

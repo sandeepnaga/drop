@@ -1,5 +1,6 @@
 package com.example.helloworld.resources;
 
+import com.example.helloworld.DateRequired;
 import com.example.helloworld.api.Saying;
 import com.example.helloworld.service.HelloWorldService;
 import com.google.common.base.Optional;
@@ -49,10 +50,12 @@ public class HelloWorldResource {
 
     @GET
     @Timed
+    @DateRequired
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
-        final String value = String.format(template, name.or(defaultName));
-        log.error("something is wrong");
-        log.error("buidl success");
+        String value = String.format(template, name.or(defaultName));
+        value = "sandeep";
+        log.error("latest again");
+        log.error("build success");
 
         helloWorldService.callPrintFunction();
         return new Saying(counter.incrementAndGet(), value);
